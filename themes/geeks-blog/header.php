@@ -8,14 +8,13 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="description" content="Geeks blog template">
     <meta name="author" content="https://github.com/cleversamerr">
-    <!-- <link rel="shortcut icon" href="<?php echo get_theme_file_uri("/assets/images/logo.png"); ?>"> -->
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
     <header class="header text-center">
-        <a class="site-title pt-lg-4 mb-0" href="index.html">SiteName.dev</a>
+        <a class="site-title pt-lg-4 mb-0 mt-4" href="index.html">SiteName.dev</a>
 
         <nav class="navbar navbar-expand-lg navbar-dark">
 
@@ -25,7 +24,17 @@
             </button>
 
             <div id="navigation" class="collapse navbar-collapse flex-column">
-                <img class="mb-3 mx-auto logo" src="images/logo.png" alt="logo">
+                <?php
+                if (function_exists("the_custom_logo")) {
+                    $custom_logo_id = get_theme_mod("custom_logo");
+                    $logo = wp_get_attachment_image_src($custom_logo_id, "full")[0];
+                    ?>
+
+                <img class="mb-3 mx-auto logo" src="<?php echo $logo; ?>" alt="logo">
+
+                <?php
+                }
+                ?>
 
                 <?php
                 wp_nav_menu(array(
