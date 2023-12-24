@@ -8,7 +8,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="description" content="Geeks blog template">
     <meta name="author" content="https://github.com/cleversamerr">
-    <link rel="shortcut icon" href="<?php echo get_theme_file_uri("/assets/images/logo.png"); ?>">
+    <!-- <link rel="shortcut icon" href="<?php echo get_theme_file_uri("/assets/images/logo.png"); ?>"> -->
     <?php wp_head(); ?>
 </head>
 
