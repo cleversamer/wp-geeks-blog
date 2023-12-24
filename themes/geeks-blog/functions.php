@@ -1,5 +1,17 @@
 <?php
 
+function geeks_blog_menus()
+{
+    $locations = array(
+        "primary" => "Desktop Primary Left Sidebar",
+        "footer" => "Footer Menu Items"
+    );
+
+    register_nav_menus($locations);
+}
+
+add_action("init", "geeks_blog_menus");
+
 function geeks_blog_features()
 {
     // Add dynamic title tag in the HTML <head> section
